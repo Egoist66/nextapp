@@ -3,21 +3,19 @@ import { FC } from "react";
 
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "About team",
   description: "Simple blog app",
 };
 
 
-const Home: FC = () => {
+const AboutTeam: FC = () => {
   return (
     <>
       <div className="container 2xl mx-auto">
-        <h1 className="text-3xl text-center">Home</h1>
+        <h1 className="text-3xl text-center">Our team</h1>
       </div>
     </>
   );
 };
 
-
-
-export default Home;
+export default AboutTeam;
