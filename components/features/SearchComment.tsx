@@ -1,15 +1,21 @@
 "use client";
 
-import { CommentsApiRespone, getCommentsBySearch } from "@/app/service/api-blog";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { CommentsApiRespone, getCommentsBySearch } from "@/service/api-blog";
 import { ChangeEvent, FC, useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
 import { Portal } from "./Portal";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const SearchComment: FC = () => {
   const [search, setSearch] = useState<string>("");
   const [isSearchVisible, setSearchVisible] = useState<boolean>(false);
   const [comments, setComments] = useState<CommentsApiRespone | undefined>([]);
+
+
+  const session = useSession();
+  const pathName = usePathname();
 
   const [value, state] = useDebounce(search, 1000);
 
@@ -40,7 +46,7 @@ export const SearchComment: FC = () => {
   }, [value]);
 
   return (
-    <div className="search">
+    <div className="search flex gap-10 flex-wrap items-center">
       <input
         className="search-input outline-none p-2 rounded"
         onChange={handleSearch}
@@ -48,6 +54,16 @@ export const SearchComment: FC = () => {
         type="search"
         placeholder="Search comments by ID..."
       />
+
+        {session?.data && (
+          <Link className={pathName === "/profile" ? "activeNavLink text-cyan-400": "text-cyan-400"} href="/profile">Profile</Link>
+        )}
+
+        {session?.data ? (
+          <Link className="text-cyan-400" onClick={() => signOut({redirect: true, callbackUrl: "/"})} href="#">Sign out</Link>
+        ): (
+          <Link href={'#'}  className="text-cyan-400" onClick={() => signIn('/auth/signin')}>Sign in</Link>
+        )}
 
       {value.length > 0 && isSearchVisible && (
         <Portal

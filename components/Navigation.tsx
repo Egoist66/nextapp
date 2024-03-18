@@ -11,6 +11,9 @@ type NavProps = {
 
 export const Navigation: FC<NavProps> = ({ navItems }) => {
   const pathName = usePathname();
+  
+    
+  
 
   return (
     <nav>
@@ -28,6 +31,8 @@ export const Navigation: FC<NavProps> = ({ navItems }) => {
             </li>
           );
         })}
+
+        
       </ul>
     </nav>
   );

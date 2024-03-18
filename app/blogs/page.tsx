@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { FC } from "react";
-import { getBlogs } from "../service/api-blog";
 import { SearchBlog } from "@/components/features/SearchBlog";
+import { getBlogs } from "@/service/api-blog";
 
 export const metadata: Metadata = {
   title: "Blog",
