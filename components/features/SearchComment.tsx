@@ -1,6 +1,6 @@
 "use client";
 
-import { CommentsApiRespone, getCommentsBySearch } from "@/app/api/api-blog";
+import { CommentsApiRespone, getCommentsBySearch } from "@/app/service/api-blog";
 import { ChangeEvent, FC, useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
 import { Portal } from "./Portal";

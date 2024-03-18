@@ -1,6 +1,5 @@
-"use client";
-
-import { BlogApiResponse } from "@/app/api/api-blog";
+"use client";;
+import { BlogApiResponse, deletePosts } from "@/app/service/api-blog";
 import Link from "next/link";
 import { ChangeEvent, FC, memo, useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
@@ -18,6 +17,12 @@ export const SearchBlog: FC<SearchProps> = memo(({ posts }) => {
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.currentTarget.value);
   
+  }
+
+  const removePosts = async (id: number) => {
+    await deletePosts(id);
+    setFoundPosts(foundPosts?.filter(post => post.id !== id))
+
   }
 
   useEffect(() => {
@@ -52,6 +57,7 @@ export const SearchBlog: FC<SearchProps> = memo(({ posts }) => {
             >
               {post?.title}
             </Link>
+            <span onClick={() => removePosts(post?.id)} className="text-red-600 ml-2 text-lg cursor-pointer inline-block font-semibold">&times;</span>
           </li>
         )): <p>No posts found</p>}
       </ul>

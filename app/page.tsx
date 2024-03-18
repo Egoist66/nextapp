@@ -12,7 +12,7 @@ const Home: FC = () => {
   return (
     <>
       <div className="container 2xl mx-auto">
-        <h1 className="text-3xl text-center">Home</h1>
+        <h1 className="text-3xl text-center pb-10">Home</h1>
       </div>
     </>
   );

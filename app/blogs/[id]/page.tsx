@@ -1,5 +1,5 @@
 
-import { getBlog } from "@/app/api/api-blog";
+import { getBlog } from "@/app/service/api-blog";
 import { Metadata } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";

@@ -74,3 +74,18 @@ export const getCommentsBySearch = async(id: number): Promise<CommentsApiRespone
     return undefined;
   }
 }
+
+export const deletePosts = async (id: number) => {
+  try {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+      method: "DELETE",
+    });
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    return res.json();
+  } catch (error) {
+    console.error(error);
+    return undefined;
+  }
+}
