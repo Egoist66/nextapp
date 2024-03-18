@@ -1,4 +1,4 @@
-import { getBlogs } from "@/app/service/api-blog"
+import { getBlogs } from "@/service/api-blog"
 import { NextResponse } from "next/server"
 
 export const GET = async function (req: Request) {

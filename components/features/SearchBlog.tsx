@@ -1,4 +1,4 @@
-"use client";;
+"use client";
 import { BlogApiResponse, deletePosts } from "@/service/api-blog";
 import Link from "next/link";
 import { ChangeEvent, FC, memo, useEffect, useState } from "react";

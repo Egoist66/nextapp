@@ -1,8 +1,7 @@
 
-import { getBlog } from "@/app/service/api-blog";
+import { getBlog } from "@/service/api-blog";
 import { Metadata } from "next";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { FC } from "react";
 
 export async function generateMetadata({ params }: PostProps): Promise<Metadata> {

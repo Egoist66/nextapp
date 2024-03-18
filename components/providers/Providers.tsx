@@ -1,4 +1,4 @@
-'use clinet'
+'use client'
 
 import { SessionProvider } from "next-auth/react";
 import { FC } from "react";
