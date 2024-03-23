@@ -6,7 +6,7 @@ import { ChangeEvent, FC, useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
 import { Portal } from "./Portal";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname,  } from "next/navigation";
 
 export const SearchComment: FC = () => {
   const [search, setSearch] = useState<string>("");
@@ -16,6 +16,8 @@ export const SearchComment: FC = () => {
 
   const session = useSession();
   const pathName = usePathname();
+  
+
 
   const [value, state] = useDebounce(search, 1000);
 
@@ -76,7 +78,7 @@ export const SearchComment: FC = () => {
           <Portal className="portal-elem">
             <div className="search-result">
               {state.isPending() ? (
-                <p className="text-center">Loading...</p>
+                <p className="text-center">Searching...</p>
               ) : comments?.length ? (
                 comments?.map((comment, i: number) => (
                   <>

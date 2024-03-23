@@ -9,10 +9,10 @@ type SearchProps = {
 };
 
 export const SearchBlog: FC<SearchProps> = memo(({ posts }) => {
+
   const [search, setSearch] = useState<string>("");
   const [foundPosts, setFoundPosts] = useState<BlogApiResponse | undefined>([])
   const [value] = useDebounce(search, 1000);
-
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.currentTarget.value);

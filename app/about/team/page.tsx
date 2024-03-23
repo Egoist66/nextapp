@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 
 const AboutTeam: FC = () => {
   return (
-    <>
-      <div className="container 2xl mx-auto">
-        <h1 className="text-3xl text-center">Our team</h1>
-      </div>
-    </>
+    
+    <div className="container 2xl mx-auto">
+      <h1 className="text-3xl text-center">Our team</h1>
+    </div>
+  
   );
 };
 

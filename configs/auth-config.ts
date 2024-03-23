@@ -27,7 +27,7 @@ export const authConfig: AuthOptions = {
                 },
             },
             async authorize(credentials, req) {
-
+                
 
                 if (!credentials?.email || !credentials?.password) {
                     return null
@@ -44,6 +44,10 @@ export const authConfig: AuthOptions = {
     
         })
     ],
+    theme: {
+        colorScheme: "dark",
+       
+    }
     // pages: {
 
     // }

@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 
 const Contacts: FC = () => {
   return (
-    <>
-      <div className="container 2xl mx-auto">
-        <h1 className="text-3xl text-center">Contacts</h1>
-      </div>
-    </>
+    
+    <div className="container 2xl mx-auto">
+      <h1 className="text-3xl text-center">Contacts</h1>
+    </div>
+    
   );
 };
 

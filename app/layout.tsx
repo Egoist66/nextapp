@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./styles/globals.scss";
 import { FC } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { App } from "./app";
+import Providers from "@/store/Provider";
 
+
+import "./styles/globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "Blog app",
   description: "Simple blog app",
   
 };
-
 
 
 
@@ -24,7 +23,11 @@ const RootLayout: FC<{ children: React.ReactNode }> = ({ children }) => {
       <body className={inter.className}>
         
         <Header />
-          <App>{children}</App>
+          <main className="min-h-screen pt-10 pl-5 pr-5">
+              <Providers>
+                {children}
+              </Providers>
+          </main>
         <Footer />
         
       </body>
