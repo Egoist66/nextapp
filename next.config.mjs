@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    
+    pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
     images: {
         formats: ['image/avif', 'image/webp'],
         remotePatterns: [
@@ -11,6 +11,11 @@ const nextConfig = {
         ],
     },
     swcMinify: true,
+    experimental: {
+        optimizePackageImports: [
+            ''
+        ]
+    }
 };
 
 export default nextConfig;
